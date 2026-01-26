@@ -5,7 +5,7 @@ Starter kit is based on [The perfect kit starter for a Symfony 4 project with Do
 ## What is inside?
 
 * Apache 2.4.57 (Debian)
-* PHP 8.3 FPM
+* PHP 8.5 FPM
 * MySQL 8.3.1
 * NodeJS LTS (latest)
 * Composer
@@ -39,7 +39,9 @@ docker-compose exec php bash
 ```bash
 cd app
 rm .gitkeep
+git config --global --add safe.directory /home/wwwroot/app
 git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 symfony new ../app --version=lts --webapp
 chown -R dev.dev *
 ```
@@ -75,18 +77,8 @@ DATABASE_URL=mysql://symfony:symfony@mysql:3306/symfony?serverVersion=5.7
 
 ## Useful commands
 
-* `docker-compose up -d` - start containers
-* `docker-compose down` - stop containers
-* `docker-compose exec php bash` - enter into PHP container
-* `docker-compose exec mysql bash` - enter into MySQL container
-* `docker-compose exec apache bash` - enter into Apache2 container
-
-## Troubleshooting
-
-* **2024.05.11 - ERROR: for apache  'ContainerConfig'**
-
-  Error `ERROR: for apache  'ContainerConfig'` after `docker-compose up -d` execution can be solved `docker compose up -d --force-recreate`
-
-  
-
-
+* `docker compose up -d` - start containers
+* `docker compose down` - stop containers
+* `docker compose exec php bash` - enter into PHP container
+* `docker compose exec mysql bash` - enter into MySQL container
+* `docker compose exec apache bash` - enter into Apache2 container
