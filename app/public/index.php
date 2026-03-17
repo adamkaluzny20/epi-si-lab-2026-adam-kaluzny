@@ -1,5 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+require_once dirname(__DIR__) . '/inc/debug.inc.php';
+require_once dirname(__DIR__) . '/inc/bookmarks.inc.php';
 
-error_reporting(E_All);
-ini_set('display_errors', 1);
+$title = 'Bookmarks';
+$template = 'index';
 
+$bookmarks = find_all();
+
+require_once dirname(__DIR__) . '/templates/base.html.php';
